@@ -1,0 +1,339 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="ofgc.list">
+      <field name="name">OFGC list</field>
+      <field name="model">ofgc.ofgc</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="ofgc.action_window">
+      <field name="name">OFGC window</field>
+      <field name="res_model">ofgc.ofgc</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="ofgc.action_server">
+      <field name="name">OFGC server</field>
+      <field name="model_id" ref="model_ofgc_ofgc"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="OFGC" id="ofgc.menu_root"/>
+-->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="ofgc.menu_1" parent="ofgc.menu_root"/>
+    <menuitem name="Menu 2" id="ofgc.menu_2" parent="ofgc.menu_root"/>
+-->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="ofgc.menu_1_list" parent="ofgc.menu_1" action="ofgc.action_window"/>
+    <menuitem name="Server to list" id="ofgc" parent="ofgc.menu_2" action="ofgc.action_server"/>
+-->
+
+
+
+    <record model="ir.ui.view" id="ofgc.schedule_tree">
+      <field name="name">ofgc.schedule.tree</field>
+      <field name="model">ofgc.schedule</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="date"/>
+          <field name="hourRange"/>
+          <field name="note"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="ofgc.schedule_form">
+      <field name="name">ofgc.schedule.form</field>
+      <field name="model">ofgc.schedule</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="date"/>
+            <field name="hourRange"/>
+            <field name="note"/>
+            <field name="projects"/>
+            <field name="type_schedule"/>
+            <field name="room"/>
+          </group>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+            <field name="activity_ids" widget="mail_activity"/>
+            <field name="message_ids" widget="mail_thread"/>
+          </div>
+        </form>
+
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="ofgc.type_schedule_tree">
+      <field name="name">ofgc.type_schedule.tree</field>
+      <field name="model">ofgc.type_schedule</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nameType"/>
+          <field name="hourRangeType"/>
+
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="ofgc.type_schedule_form">
+      <field name="name">ofgc.type_schedule.form</field>
+      <field name="model">ofgc.type_schedule</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="nameType"/>
+            <field name="hourRangeType"/>
+            <field name="schedule">
+              <tree>
+                <field name="date"/>
+                <field name="hourRange"/>
+                <field name="note"/>
+              </tree>
+            </field>
+          </group>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+            <field name="activity_ids" widget="mail_activity"/>
+            <field name="message_ids" widget="mail_thread"/>
+          </div>
+        </form>
+
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="ofgc.room_tree">
+      <field name="name">ofgc.room.tree</field>
+      <field name="model">ofgc.room</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nameRoom"/>
+          <field name="acronymRoom"/>
+
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="ofgc.room_form">
+      <field name="name">ofgc.room.form</field>
+      <field name="model">ofgc.room</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="nameRoom"/>
+            <field name="acronymRoom"/>
+            <field name="schedule">
+              <tree>
+                <field name="date"/>
+                <field name="hourRange"/>
+                <field name="note"/>
+              </tree>
+            </field>
+          </group>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+            <field name="activity_ids" widget="mail_activity"/>
+            <field name="message_ids" widget="mail_thread"/>
+          </div>
+        </form>
+
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="ofgc.projects_tree">
+      <field name="name">ofgc.projects.tree</field>
+      <field name="model">ofgc.projects</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nameProject"/>
+          <field name="startDateProject"/>
+          <field name="endDateProject"/>
+          <field name="published"/>
+
+
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="ofgc.projects_form">
+      <field name="name">ofgc.projects.form</field>
+      <field name="model">ofgc.projects</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="nameProject"/>
+            <field name="startDateProject"/>
+            <field name="endDateProject"/>
+            <field name="published"/>
+            <field name="seasons"/>
+            <field name="schedule">
+              <tree>
+                <field name="date"/>
+                <field name="hourRange"/>
+                <field name="note"/>
+              </tree>
+            </field>
+            <field name="user"/>
+          </group>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+            <field name="activity_ids" widget="mail_activity"/>
+            <field name="message_ids" widget="mail_thread"/>
+          </div>
+        </form>
+
+      </field>
+    </record>
+
+
+
+    <record model="ir.ui.view" id="ofgc.seasons_tree">
+      <field name="name">ofgc.seasons.tree</field>
+      <field name="model">ofgc.seasons</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nameSeason"/>
+          <field name="startDate"/>
+          <field name="endDate"/>
+          <field name="noteSeason"/>
+          <field name="projects">
+            <tree>
+              <field name="nameProject"/>
+              <field name="startDateProject"/>
+              <field name="endDateProject"/>
+              <field name="published"/>
+            </tree>
+          </field>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="ofgc.seasons_form">
+      <field name="name">ofgc.seasons.form</field>
+      <field name="model">ofgc.seasons</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="nameSeason"/>
+            <field name="startDate"/>
+            <field name="endDate"/>
+            <field name="noteSeason"/>
+            <field name="projects">
+              <tree>
+                <field name="nameProject"/>
+                <field name="startDateProject"/>
+                <field name="endDateProject"/>
+                <field name="published"/>
+              </tree>
+            </field>
+          </group>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+            <field name="activity_ids" widget="mail_activity"/>
+            <field name="message_ids" widget="mail_thread"/>
+          </div>
+        </form>
+
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="ofgc.schedule_action_window">
+      <field name="name">schedule</field>
+      <field name="res_model">ofgc.schedule</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="ofgc.type_schedule_action_window">
+      <field name="name">type_schedule</field>
+      <field name="res_model">ofgc.type_schedule</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="ofgc.room_action_window">
+      <field name="name">room</field>
+      <field name="res_model">ofgc.room</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="ofgc.seasons_action_window">
+      <field name="name">seasons</field>
+      <field name="res_model">ofgc.seasons</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="ofgc.projects_action_window">
+      <field name="name">projects</field>
+      <field name="res_model">ofgc.projects</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+
+    <menuitem name="OFGC" id="ofgc.menu_root"/>
+    <menuitem name="OFGC" id="ofgc.ofgc_menu" parent="ofgc.menu_root"/>
+
+    <menuitem name="Schedule" id="ofgc.ofgc_menu_schedule" parent="ofgc.ofgc_menu" action="ofgc.schedule_action_window"/>
+    <menuitem name="Type schedule" id="ofgc.ofgc_menu_type_schedule" parent="ofgc.ofgc_menu" 
+    action="ofgc.type_schedule_action_window"/>
+    <menuitem name="Rooms" id="ofgc.ofgc_menu_room" parent="ofgc.ofgc_menu" action="ofgc.room_action_window"/>
+    <menuitem name="Projects" id="ofgc.ofgc_menu_projects" parent="ofgc.ofgc_menu" action="ofgc.projects_action_window"/>
+
+    <menuitem name="Seasons" id="ofgc.ofgc_menu_seasons" parent="ofgc.ofgc_menu" action="ofgc.seasons_action_window"/>
+
+    <!-- <record id="res_partner_view_form_inherit_ofgc" model="ir.ui.view">
+      <field name="name">res.partner.view.form.inherit.ofgc</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//page[@name='internal_notes']" position="after">
+          <page name="form_projects_clients" string="Projects">
+            <field name="projects">
+
+            </field>
+          </page>
+        </xpath>
+      </field>
+    </record> -->
+    <!-- <tree>
+                <field name="nameProject"/>
+                <field name="startDateProject"/>
+                <field name="endDateProject"/>
+                <field name="published"/>
+                <field name="seasons"/>
+              </tree> -->
+
+  </data>
+</odoo>

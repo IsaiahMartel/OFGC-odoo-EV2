@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="ir.actions.report" id="ofgc.ofgc_seasons_report">
+            <field name="name">Reporte Seasons</field>
+            <field name="model">ofgc.seasons</field>
+            <field name="report_type">qweb-html</field>
+            <field name="report_name">ofgc.seasons_report_template</field>
+            <field name="report_file">ofgc.seasons_report_template</field>
+            <field name="binding_model_id" ref="ofgc.model_ofgc_seasons"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo> 

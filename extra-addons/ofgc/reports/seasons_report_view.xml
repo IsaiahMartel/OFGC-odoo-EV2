@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+
+<odoo>
+    <data>
+        <template id="seasons_report_template">
+            <t t-call="web.html_container">
+                <head>
+                    <style>
+ table { 
+ border: #171E3E 2px solid;
+ border-spacing: 1px;
+ margin-left: auto;
+ margin-right: auto;
+ text-align: center;'
+ 
+ }
+
+ tr {
+ border: #171E3E 2px solid;
+ border-spacing: 1px;
+  background-color: #DAF7A6;
+ }
+
+ td {
+ border: #171E3E 2px solid;
+ border-spacing: 1px;
+ }
+                    </style>
+                </head>
+                <div class="page">
+                    <br/>
+                    <h2>SEASONS REPORT</h2>
+                     
+                                    <img src="/ofgc/static/description/icon.png" height="80px" />
+                               
+                    <t t-foreach='docs' t-as='o'>
+                        <table>
+                            <tr>
+                                <td width="200">
+                                    <b>Name season </b>
+                                </td>
+                                <td width="200" align="center">
+                                    <b>Start date season </b>
+                                </td>
+                                <td width="200" align="center">
+                                    <b>End date season </b>
+                                </td>
+                                <td width="200" align="center">
+                                    <b>Note season </b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="200">
+                                    <span t-field="o.nameSeason"/>
+                                </td>
+                                <td width="200">
+                                    <span t-field="o.startDate"/>
+                                </td>
+
+                                <td width="200">
+                                    <span t-field="o.endDate"/>
+                                </td>
+                                <td width="200">
+                                    <span t-field="o.noteSeason"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" align="center">
+                                    <b>
+                                        Project of the season
+                                    </b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="200">
+                                    <b>Name project </b>
+                                </td>
+                                <td width="200" align="center">
+                                    <b>Start date project </b>
+                                </td>
+                                <td width="200" align="center">
+                                    <b>End date project </b>
+                                </td>
+                                <td width="200" align="center">
+                                    <b>Published </b>
+                                </td>
+                            </tr>
+                            <tr t-foreach='o.projects' t-as='line'>
+                                <td width="200" align="center">
+                                    <span t-esc="line.nameProject"/>
+                                </td>
+                                <td width="200">
+                                    <span t-esc="line.startDateProject"/>
+                                </td>
+                                <td width="200">
+                                    <span t-esc="line.endDateProject"/>
+                                </td>
+                                <td width="200">
+                                    <span t-esc="line.published"/>
+                                </td>
+
+                            </tr>
+
+                        </table>
+                    </t>
+                        <h2>SEASONS REPORT</h2>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo> 

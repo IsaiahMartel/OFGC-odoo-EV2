@@ -1,0 +1,78 @@
+.o_main_navbar {
+  background-color: blue;
+ 
+  > a, > button {
+      
+      background-color: rgb(10, 255, 63);
+ 
+
+      font-size: 30px;
+
+      &:hover, &:focus {
+          background-color: red;
+      }
+   
+  }
+
+ 
+
+  > .o_menu_brand {
+  
+      color: yellow;
+      font-size: 22px;
+      font-weight: 500;
+    
+  }
+
+  .o_content {
+    background-color: rgb(255, 0, 179) !important;
+  }
+
+  .o_kanban_record {
+    background-color: aqua !important;
+    color: aqua !important;
+  }
+
+  .o_dropdown_menu {
+    background-color: black;
+
+    .o_menu_item {
+    
+      background-color: black;
+        > .dropdown-item {
+            color: yellow;
+
+            &:hover {
+                color: darken(yellow, 10%);
+            }
+        }
+    }
+}
+
+.dropdown-item {
+
+  color: yellow;
+  background-color: black;
+  &:hover {
+      color: darken(yellow, 10%);
+  }
+
+  &.selected { // TODO why not using standard BS4 "active" class ?
+      color: darken(yellow, 10%);
+      font-weight: bold;
+
+      &:before {
+          font-family: FontAwesome;
+          position: absolute;
+          left: 4px;
+          content: "\f00c";
+      }
+  }
+}
+
+
+.o_NotificationList_preview {
+  background-color: purple !important ;
+  color: yellowgreen ;
+}
+}

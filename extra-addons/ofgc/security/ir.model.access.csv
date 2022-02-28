@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_ofgc_schedule_gestor,ofgc.schedule.gestor,model_ofgc_schedule,ofgc.grupo_gestor,1,1,1,1
+access_ofgc_schedule_operario,ofgc.schedule.operario,model_ofgc_schedule,ofgc.grupo_operario,1,0,0,0
+
+access_ofgc_type_schedule_gestor,ofgc.type_schedule.gestor,model_ofgc_type_schedule,ofgc.grupo_gestor,1,1,1,1
+access_ofgc_type_schedule_operario,ofgc.type_schedule.operario,model_ofgc_type_schedule,ofgc.grupo_operario,1,0,0,0 
+
+access_ofgc_room_gestor,ofgc.room.gestor,model_ofgc_room,ofgc.grupo_gestor,1,1,1,1
+access_ofgc_room_operario,ofgc.room.operario,model_ofgc_room,ofgc.grupo_operario,1,0,0,0 
+
+access_ofgc_projects_gestor,ofgc.projects.gestor,model_ofgc_projects,ofgc.grupo_gestor,1,1,1,1
+access_ofgc_projects_operario,ofgc.projects.operario,model_ofgc_projects,ofgc.grupo_operario,1,0,0,0 
+
+access_ofgc_seasons_gestor,ofgc.seasons.gestor,model_ofgc_seasons,ofgc.grupo_gestor,1,1,1,1
+access_ofgc_seasons_operario,ofgc.seasons.operario,model_ofgc_seasons,ofgc.grupo_operario,1,0,0,0 
+
